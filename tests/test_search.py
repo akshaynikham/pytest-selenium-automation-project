@@ -1,13 +1,14 @@
-from amazon.search import search_for_product, get_search_results_title, get_product_titles,select_product
+from amazon.search import search_for_product, get_search_results_title, get_product_titles, select_product, switch_window
 from amazon.navigation import open_amazon_homepage
+from amazon.add_item_to_cart import add_items_to_cart
 
 
 # def test_search_amazon(driver):
 #     open_amazon_homepage(driver)
 #     search_for_product(driver, "laptop")
-#     assert "Amazon.in : laptop" in get_search_result_title(driver)
-
-
+#     assert "Amazon.in : laptop" in get_search_results_title(driver)
+#
+#
 # def test_get_product_titles(driver):
 #     open_amazon_homepage(driver)
 #     search_for_product(driver, "laptop")
@@ -16,13 +17,16 @@ from amazon.navigation import open_amazon_homepage
 #     print("First few products titles : ", product_titles[:5])
 #     expected_product = "Acer Aspire Lite"
 #     assert any(expected_product in title for title in product_titles),f"{expected_product} not found"
+#
+#
+# def test_select_product(driver):
+#     open_amazon_homepage(driver)
+#     search_for_product(driver, "iphone13+256gb")
+#     print(select_product(driver, "iphone"))
 
-
-def test_select_product(driver):
+def test_add_product_to_cart(driver):
     open_amazon_homepage(driver)
-    search_for_product(driver, "laptop")
-    print(select_product(driver, "HP"))
-
-
-
-
+    search_for_product(driver, "iphone13+256gb")
+    print(select_product(driver, "Apple"))
+    switch_window(driver)
+    add_items_to_cart(driver)

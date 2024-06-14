@@ -6,3 +6,4 @@ def initialize_driver():
     driver.implicitly_wait(10)
     driver.maximize_window()
     return driver
+
