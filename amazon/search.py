@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
+
 def search_for_product(driver, product_name):
     search_box = driver.find_element(By.ID, "twotabsearchtextbox")
     search_box.send_keys(product_name)
@@ -37,3 +38,16 @@ def select_product(driver, product_title):
             return products[0].text
         else:
             raise Exception("No products found on the page.")
+
+
+def switch_window(driver):
+    original_window = driver.current_window_handle
+    print(f"original window handle: {original_window}")
+    all_windows = driver.window_handles
+    print(f"all handles : {all_windows}")
+    driver.switch_to.window(all_windows[-1])
+    # for window in all_windows:
+    #     if window != original_window:
+    #         print(f"window switched successfully")
+    #         driver.switch_to.window(window)
+    #         break
