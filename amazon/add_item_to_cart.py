@@ -1,10 +1,11 @@
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
 def add_items_to_cart(driver):
-    wait = WebDriverWait(driver, 15)
+    wait = WebDriverWait(driver, 20)
     add_to_cart_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@id='add-to-cart-button'][@type='submit']")))
     add_to_cart_button.click()
     assert "Added to Cart" in driver.page_source, "item was not added"
