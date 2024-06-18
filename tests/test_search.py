@@ -1,6 +1,8 @@
 from amazon.search import search_for_product, get_search_results_title, get_product_titles, select_product, switch_window
 from amazon.navigation import open_amazon_homepage
 from amazon.add_item_to_cart import add_items_to_cart
+import allure
+import pytest
 
 
 # def test_search_amazon(driver):
@@ -24,9 +26,16 @@ from amazon.add_item_to_cart import add_items_to_cart
 #     search_for_product(driver, "iphone13+256gb")
 #     print(select_product(driver, "iphone"))
 
+
+@allure.feature('add product to cart')
+@allure.story('search and add product to cart')
 def test_add_product_to_cart(driver):
-    open_amazon_homepage(driver)
-    search_for_product(driver, "iphone13+256gb")
+    with allure.step('open_amazon_homepage'):
+        open_amazon_homepage(driver)
+    with allure.step('search for product'):
+        search_for_product(driver, "iphone13+256gb")
     print(select_product(driver, "Apple"))
-    switch_window(driver)
-    add_items_to_cart(driver)
+    with allure.step('switch window'):
+        switch_window(driver)
+    with allure.step('add items to cart'):
+        add_items_to_cart(driver)
