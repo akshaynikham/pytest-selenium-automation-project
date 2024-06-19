@@ -46,6 +46,8 @@ def switch_window(driver):
     all_windows = driver.window_handles
     print(f"all handles : {all_windows}")
     driver.switch_to.window(all_windows[-1])
+
+
     # for window in all_windows:
     #     if window != original_window:
     #         print(f"window switched successfully")

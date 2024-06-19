@@ -2,7 +2,6 @@ from amazon.search import search_for_product, get_search_results_title, get_prod
 from amazon.navigation import open_amazon_homepage
 from amazon.add_item_to_cart import add_items_to_cart
 import allure
-import pytest
 
 
 # def test_search_amazon(driver):
@@ -39,3 +38,5 @@ def test_add_product_to_cart(driver):
         switch_window(driver)
     with allure.step('add items to cart'):
         add_items_to_cart(driver)
+
+
