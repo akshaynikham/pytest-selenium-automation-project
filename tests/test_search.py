@@ -4,6 +4,19 @@ from amazon.add_item_to_cart import add_items_to_cart
 import allure
 
 
+@allure.feature('add product to cart')
+@allure.story('search and add product to cart')
+def test_add_product_to_cart(driver):
+    with allure.step('open_amazon_homepage'):
+        open_amazon_homepage(driver)
+    with allure.step('search for product'):
+        search_for_product(driver, "iphone13+256gb")
+    print(select_product(driver, "Apple"))
+    with allure.step('switch window'):
+        switch_window(driver)
+    with allure.step('add items to cart'):
+        add_items_to_cart(driver)
+
 # def test_search_amazon(driver):
 #     open_amazon_homepage(driver)
 #     search_for_product(driver, "laptop")
@@ -26,17 +39,5 @@ import allure
 #     print(select_product(driver, "iphone"))
 
 
-@allure.feature('add product to cart')
-@allure.story('search and add product to cart')
-def test_add_product_to_cart(driver):
-    with allure.step('open_amazon_homepage'):
-        open_amazon_homepage(driver)
-    with allure.step('search for product'):
-        search_for_product(driver, "iphone13+256gb")
-    print(select_product(driver, "Apple"))
-    with allure.step('switch window'):
-        switch_window(driver)
-    with allure.step('add items to cart'):
-        add_items_to_cart(driver)
 
 
