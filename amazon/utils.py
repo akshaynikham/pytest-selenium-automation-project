@@ -11,6 +11,13 @@ def initialize_driver():
     driver.maximize_window()
     return driver
 
+def switch_window(driver):
+    original_window = driver.current_window_handle
+    print(f"original window handle: {original_window}")
+    all_windows = driver.window_handles
+    print(f"all handles : {all_windows}")
+    driver.switch_to.window(all_windows[-1])
+
 
 def hover_and_select(driver, hover_locator, select_locator):
     actions = ActionChains(driver)

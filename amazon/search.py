@@ -32,7 +32,6 @@ def select_product(driver, product_title):
                 return product.text
         raise Exception(f"Product with title '{product_title}' not found.")
     else:
-        # Select the first product if no specific title is provided
         if products:
             products[0].click()
             return products[0].text
