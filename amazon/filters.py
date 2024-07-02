@@ -24,12 +24,10 @@ def apply_delivery_filter(driver, option_text, max_attempt = 3):
 
                 except TimeoutException:
                     break
-                #     driver.execute_script("arguments[0].click()", checkbox)
 
                 except StaleElementReferenceException:
                     retries+=1
                     continue
-                    # WebDriverWait(driver, 10).until(EC.staleness_of(checkbox))
 
         checkbox = wait.until(EC.presence_of_element_located((By.XPATH, filter_xpath)))
         assert checkbox.is_selected(), "The checkbox is not selected"
