@@ -1,13 +1,10 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-
-
 def search_for_product(driver, product_name):
     search_box = driver.find_element(By.ID, "twotabsearchtextbox")
     search_box.send_keys(product_name)
     search_box.send_keys(Keys.RETURN)
-
 
 def get_search_results_title(driver):
     return driver.title
