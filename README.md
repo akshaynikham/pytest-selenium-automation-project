@@ -1,4 +1,4 @@
-# Amazon Automation Project
+# Amazon.in Automation Project
 
 This project automates interactions with Amazon's website using Selenium and pytest.
 
@@ -11,19 +11,31 @@ This project automates interactions with Amazon's website using Selenium and pyt
 
 ## Setup
 
-1. Install dependencies:
-    ```
-    pip install -r requirements.txt
-    ```
+Great! Setting up an automation framework using Selenium and Pytest in PyCharm is a structured and efficient way to start. Here's a step-by-step guide to get you going:
 
-2. Ensure `chromedriver` is in your system PATH.
+### Prerequisites
+1. **Python**: Ensure Python is installed on system. You can download it from [python.org](https://www.python.org/).
+2. **PyCharm**: Download and install PyCharm from [jetbrains.com](https://www.jetbrains.com/pycharm/download/).
 
-## Running Tests
+### Step-by-Step Guide
 
-To run the tests, execute:
-    ```
-    pytest    
-    ```
+#### 1. Set Up a Virtual Environment
+1. Open PyCharm and create a new project.
+2. In the project settings, create a new virtual environment.
+    - Go to `File` -> `Settings` -> `Project: <your_project>` -> `Python Interpreter`.
+    - Click on the gear icon and select `Add...`.
+    - Choose `New environment` and select `Virtualenv`.
+
+#### 2. Install Required Packages
+Open the terminal in PyCharm and install Selenium and Pytest using pip:
+```bash
+pip install selenium pytest
+```
+
+#### 3. Set Up Selenium WebDriver
+1. Download the appropriate WebDriver for your browser.
+2. Place the WebDriver in a directory that's included in system's PATH, or provide the path to the WebDriver in your code.
+
 ## Allure - to generate report
 
 1. **Java and Allure CLI Installation**:
